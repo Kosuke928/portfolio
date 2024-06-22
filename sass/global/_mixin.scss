@@ -1,0 +1,24 @@
+/*----------------------------------------------------------
+ブレイクポイント
+----------------------------------------------------------*/
+@use "sass:map";
+$mq-breakpoints: (
+  'xs': 374px,
+  'sp': 375px, //スマホデフォルト
+  'ss': 512px, //スマホデフォルト
+  'sm': 768px, //
+  'md': 1000px, //
+  'lg': 1200px, //
+  'pc': 1280px, //PCデフォルト
+  // 'xxl': 1920px,
+) !default;
+
+@mixin mq($breakpoint: md, $rule: min) {
+  $breakpoint: map.get($mq-breakpoints, $breakpoint);
+  @if $rule == max {
+    $breakpoint: $breakpoint - 1px;
+  }
+  @media screen and (#{$rule}-width: $breakpoint) {
+    @content;
+  }
+}

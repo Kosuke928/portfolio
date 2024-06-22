@@ -1,0 +1,44 @@
+@use "../global" as global;
+/*----------------------------------------------------------
+Baseスタイル
+----------------------------------------------------------*/
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #393939;
+}
+
+input,
+textarea,
+select {
+  // margin: 0;
+  // padding: 0;
+  // background: none;
+  // border: none;
+  // border-radius: 0;
+  // outline: none;
+  // -webkit-appearance: none;
+  // -moz-appearance: none;
+  // appearance: none;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.sent .wpcf7-response-output,
+.wpcf7 form.failed .wpcf7-response-output {
+  // display: none !important;
+}
+.wpcf7-list-item{
+  // margin: 0;
+}
+//WP化次のボタン横のスピナーを非表示
+div.wpcf7 .wpcf7-spinner {
+  // display: none !important;
+}
+.wpcf7-not-valid-tip {
+  // display: block;
+  // padding-top: 10px;
+  // color: global.$c-accent;
+}
