@@ -1,20 +1,28 @@
 /*----------------------------------------------------------
 テキストカラー
 ----------------------------------------------------------*/
-$c-base-dark: #393939;
-// $c-base-light: #FFFFFF;
-// $c-main: #1391E6;
-// $c-primary: #0060A0;
-// $c-secondary: #DFF1FD;
-// $c-accent: #EE5A6D;
+$c-base-dark: #000000;
+$c-base-light: #FFFFFF;
+$c-main: #FEFFFA;
+$c-primary: #52616A;
+$c-secondary: #F8D5B8;
+$c-accent: #7F8C94;
+$c-emphasis: #FF0000;
+
 
 /*----------------------------------------------------------
 フォント
 ----------------------------------------------------------*/
+$ff-main-jp: "Sawarabi Mincho";
+$ff-main-en: "Lora";
 
 
 /*----------------------------------------------------------
 z-index
 ----------------------------------------------------------*/
 
-// $z-index-header: 0;
+$z-index-header: 10;
+$z-index-drawer: 30;
+$z-index-hamburger: 20;
+$z-index-fv-logo: 1;
+$z-index-scroll-down: 1;
