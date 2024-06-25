@@ -3,9 +3,34 @@
 /*----------------------------------------------------------
 btn_x
 ----------------------------------------------------------*/
-.btn__icon-path--x {
-  fill: black;
+.p-btn-x {
+  padding-left: 10px;
 }
+.c-btn-x__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: global.$c-main;
+  font-family: global.$ff-main-en;
+  font-size: 12px;
+  background-color: global.$c-base-dark;
+  gap: 6px;
+  padding-top: 6px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  letter-spacing: 1.44px;
+  border-radius: 2px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.c-btn-x__link svg {
+  width: 15px;
+  height: 15px;
+}
+.btn__icon-path--x {
+  fill: global.$c-base-light;
+}
+
 .btn__icon-path--skill {
   fill: black;
 }
