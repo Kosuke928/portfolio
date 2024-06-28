@@ -1,0 +1,11 @@
+@use "../global" as global;
+
+.u-c-base-dark {
+  color: global.$c-base-dark;
+}
+.u-c-main {
+  color: global.$c-main;
+}
+.u-c-primary {
+  color: global.$c-primary;
+}

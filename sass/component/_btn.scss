@@ -12,7 +12,7 @@ btn_x
   justify-content: center;
   color: global.$c-main;
   font-family: global.$ff-main-en;
-  font-size: 12px;
+  font-size: 0.75rem;
   background-color: global.$c-base-dark;
   gap: 6px;
   padding-top: 6px;
@@ -27,10 +27,13 @@ btn_x
   width: 15px;
   height: 15px;
 }
-.btn__icon-path--x {
+.c-btn__icon-path--pagination {
+  fill: global.$c-primary;
+}
+.c-btn__icon-path--x {
   fill: global.$c-base-light;
 }
 
-.btn__icon-path--skill {
-  fill: black;
-}
+// .btn__icon-path--skill {
+//   fill: black;
+// }
