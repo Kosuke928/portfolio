@@ -1,96 +1,6 @@
 
 
-    <main class="l-main">
-      <section id="works" class="p-works">
-        <div class="p-works__inner l-inner">
-          <div class="p-works__container">
-            <h2 class="p-works__title p-sec-title">
-              <span class="p-sec-title__en">-Works</span>
-              <span class="p-sec-title__jp">制作実績</span>
-            </h2>
-            <div class="p-works__slide">
-              <div class="p-slide works-swiper">
-                <ul class="p-slide__wrapper swiper-wrapper">
-                  <li class="p-slide__slide swiper-slide">
-                    <figure class="p-slide__card">
-                      <img
-                        src="./img/slide_img1.webp"
-                        alt=""
-                        decoding="async"
-                        width="297"
-                        height="230"
-                      />
-                    </figure>
-                    <h3 class="p-slide__title">アプリ紹介サイト</h3>
-                    <div class="p-slide__tags">
-                      <div class="p-slide__tags">
-                        <span class="p-slide__tag p-tag">架空サイト</span>
-                        <span class="p-slide__tag p-tag">LP</span>
-                      </div>
-                    </div>
-                    <div class="p-slide__basic" style="display: none">
-                      <span class="p-slide__id"></span>
-                      <span class="p-slide__pass"></span>
-                    </div>
-                  </li>
-                  <li class="p-slide__slide swiper-slide">
-                    <figure class="p-slide__card">
-                      <img
-                        src="./img/slide_img2.webp"
-                        alt=""
-                        decoding="async"
-                        width="297"
-                        height="230"
-                      />
-                    </figure>
-                    <h3 class="p-slide__title">尾道レトロキャンペーン</h3>
-                    <div class="p-slide__tags">
-                      <div class="p-slide__tags">
-                        <span class="p-slide__tag p-tag">架空サイト</span>
-                        <span class="p-slide__tag p-tag">LP</span>
-                      </div>
-                    </div>
-                    <div class="p-slide__basic" style="display: none">
-                      <span class="p-slide__id"></span>
-                      <span class="p-slide__pass"></span>
-                    </div>
-                  </li>
-                  <li class="p-slide__slide swiper-slide">
-                    <figure class="p-slide__card">
-                      <img
-                        src="./img/slide_img3.webp"
-                        alt=""
-                        decoding="async"
-                        width="297"
-                        height="230"
-                      />
-                    </figure>
-                    <h3 class="p-slide__title">歯科クリニック</h3>
-                    <div class="p-slide__tags">
-                      <div class="p-slide__tags">
-                        <span class="p-slide__tag p-tag">架空サイト</span>
-                        <span class="p-slide__tag p-tag">LP</span>
-                        <span class="p-slide__tag p-tag">WordPress</span>
-                      </div>
-                    </div>
-                    <div class="p-slide__basic">
-                      <span class="p-slide__id">ユーザー名：demo</span>
-                      <span class="p-slide__pass">パスワード：demo</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="p-slide__arrow">
-                <div class="p-slide__arrow-next swiper-button-next"></div>
-                <div class="p-slide_arrow-prev swiper-button-prev"></div>
-              </div>
-              <div class="p-slide__bar">
-                <div class="p-slide__scrollbar swiper-scrollbar"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       <section id="about" class="p-about">
         <div class="p-about__inner l-inner">
@@ -647,7 +557,7 @@
           </div>
         </div>
       </section>
-    </main>
+
 
     <footer class="l-footer" id="footer">
       <p class="l-footer__text">

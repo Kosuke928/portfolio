@@ -1,5 +1,8 @@
 @use "../global" as global;
 
+/*----------------------------------------------------------
+Fv
+----------------------------------------------------------*/
 .p-fv {
   padding-top: 60px;
   width: 100%;
@@ -22,8 +25,8 @@
   position: absolute;
   top: 45px;
   right: calc(50% + 3px);
-  z-index: global.$z-index-fv-logo;
   opacity: 0;
+  z-index: global.$z-index-fv-logo;
   animation: fadeIn 3s forwards;
   @include global.mq(ss) {
     top: 80px;
@@ -119,19 +122,19 @@
   left: calc(50% - 165px);
   color: global.$c-base-light;
   font-family: "Sawarabi Mincho";
-  font-size: 20px;
+  font-size: 1.25rem;
   letter-spacing: 2px;
   @include global.mq(ss) {
     left: calc(50% - 90px - 10vw);
-    font-size: 24px;
+    font-size: 1.5rem;
     letter-spacing: 2.3px;
   }
   @include global.mq(sm) {
-    font-size: 26px;
+    font-size: 1.625rem;
   }
   @include global.mq(md) {
     left: calc(50% - 60px - 10vw);
-    font-size: 32px;
+    font-size: 2rem;
     letter-spacing: 3.2px;
   }
   @include global.mq(pc) {
@@ -187,7 +190,7 @@
   position: absolute;
   top: -17px;
   left: -17px;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: global.$c-base-light;
   letter-spacing: 0.05em;
   @include global.mq(pc) {

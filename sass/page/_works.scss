@@ -1,1 +1,227 @@
 @use "../global" as global;
+
+/*----------------------------------------------------------
+Works
+----------------------------------------------------------*/
+.p-works {
+  padding-top: 32px;
+  padding-bottom: 46px;
+  width: 100%;
+  background-color: global.$c-primary;
+  @include global.mq(lg) {
+    padding-top: 73px;
+    padding-bottom: 100px;
+  }
+}
+.p-works__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.l-inner {
+}
+.p-works__container {
+}
+.p-works__title {
+}
+
+/*---------- スワイパー ----------*/
+.p-works__slide {
+  padding-top: 36px;
+  padding-bottom: 54px;
+  position: relative;
+  @include global.mq(md) {
+    padding-bottom: 92px;
+    margin-inline: calc(50% - 50vw);
+  }
+}
+.p-slide {
+  width: 100%;
+  overflow: hidden;
+}
+.p-slide__wrapper {
+}
+.p-slide__slide {
+  color: global.$c-base-dark;
+  background-color: global.$c-main;
+  height: auto;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 12px;
+  padding-top: 32px;
+  padding-bottom: 26px;
+  padding-inline: clamp(19px, calc(100vw * (19px / 375px)), 50px);
+  border-radius: 10px;
+  @include global.mq(ss) {
+    padding-inline: clamp(20px, calc(100vw * (19px / 512px)), 30px);
+    padding-bottom: 50px;
+  }
+  @include global.mq(sm) {
+    padding-inline: clamp(30px, calc(100vw * (19px / 768px)), 40px);
+    padding-bottom: 80px;
+  }
+  @include global.mq(md) {
+    padding-bottom: 100px;
+  }
+  @include global.mq(lg) {
+    padding-top: 60px;
+    padding-inline: calc(100vw * (50px / 1280px));
+    border-radius: 20px;
+  }
+}
+
+.works-swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+
+/*---------- スライドアイテム ----------*/
+.p-slide__card {
+  margin: 0 auto;
+  text-align: center;
+  width: calc((192px + 19px * 2) / 230px * 100%);
+  max-width: 375px;
+  aspect-ratio: 192 / 144;
+  @include global.mq(lg) {
+  }
+}
+.p-slide__card img {
+  width: 100%;
+  aspect-ratio: calc(192px / 375px * 100) / calc(144px / 375px * 100);
+}
+.p-slide__title {
+  margin-top: 24px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  font-size: clamp(16px, calc(16px / 365px * 100vw), 18px);
+  white-space: nowrap;
+  @include global.mq(sp, max) {
+    font-size: 0.875rem;
+  }
+  @include global.mq(ss) {
+    font-size: clamp(16px, calc(16px / 512px * 100vw), 20px);
+  }
+  @include global.mq(sm) {
+    font-size: clamp(20px, calc(16px / 768px * 100vw), 24px);
+  }
+  @include global.mq(lg) {
+    margin-top: calc(28px * (100vw / 1280px));
+    font-size: clamp(24px, calc(24px / 1280px * 100vw), 32px);
+    letter-spacing: 2.4px;
+  }
+}
+.p-slide__tags {
+  margin-top: 9px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  row-gap: 8px;
+  @include global.mq(lg) {
+    margin-top: calc(8px * (100vw / 1280px));
+    gap: 9px;
+  }
+}
+.p-slide__tag {
+}
+.p-slide__basic {
+  margin-top: 18px;
+  font-size: 0.75rem;
+  letter-spacing: 1.2px;
+  display: flex;
+  flex-direction: column;
+  @include global.mq(sm) {
+    font-size: 0.875rem;
+  }
+  @include global.mq(md) {
+    flex-direction: row;
+    gap: 16px;
+  }
+  @include global.mq(lg) {
+    margin-top: calc(34px * (100vw / 1280px));
+    font-size: clamp(15px, calc(15px / 1280px * 100vw), 20px);
+    letter-spacing: 1.5px;
+  }
+}
+.p-slide__id {
+}
+.p-slide__pass {
+}
+
+/*---------- ページネーション ----------*/
+.p-slide__arrow {
+  position: absolute;
+  bottom: -16px;
+  left: clamp(18px, 5%, 100px);
+  display: flex;
+  gap: clamp(30px,calc(36px / 375px * 100vw), 40px);
+  @include global.mq(ss) {
+    left: clamp(18px, 7%, 100px);
+  }
+  @include global.mq(md) {
+    bottom: -22px;
+    left: clamp(100px, 9%, 50%);
+    gap: clamp(40px,calc(66px / 1280px * 100vw), 70px);
+  }
+}
+.p-slide__arrow-next,
+.p-slide_arrow-prev {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: global.$c-main;
+  @include global.mq(md) {
+    width: 60px;
+    width: clamp(40px, calc(60px / 1280px * 100vw), 80px);
+    height: 60px;
+    height: clamp(40px, calc(60px / 1280px * 100vw), 80px);
+  }
+}
+.p-slide__arrow-next svg,
+.p-slide_arrow-prev svg {
+  width: 18px;
+  height: 18px;
+  @include global.mq(lg) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: auto;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+}
+
+/*---------- プログレスバー ----------*/
+.p-slide__bar {
+  background: global.$c-main;
+  right: 20px;
+  @include global.mq(lg) {
+    right: 110px;
+  }
+}
+
+.swiper-scrollbar {
+}
+.swiper-scrollbar-drag {
+  background: global.$c-secondary;
+}
+.swiper-scrollbar-horizontal {
+}
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  width: 53%;
+  left: auto;
+  height: 4px;
+  @include global.mq() {
+    width: 54%;
+    height: 8px;
+  }
+}
