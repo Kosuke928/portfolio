@@ -1,0 +1,39 @@
+@use "../global" as global;
+
+/*----------------------------------------------------------
+icon
+----------------------------------------------------------*/
+.c-icon-path--skill {
+  fill: global.$c-primary;
+}
+
+.c-icon-skill {
+}
+.c-icon-skill--html {
+  width: 60px;
+  height: 60px;
+}
+.c-icon-skill--css {
+  width: 60px;
+  height: 60px;
+}
+.c-icon-skill--js {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 8px;
+  @include global.mq(ss) {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 8px;
+  }
+}
+.c-icon-skill--jq {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 0px;
+}
+.c-icon-skill--wp {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 10px;
+}

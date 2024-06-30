@@ -6,20 +6,27 @@
   position: relative;
   width: fit-content;
   margin: 0 auto;
+  text-shadow: 4px 4px 4px #3a4349;
+  color: global.$c-main;
+  text-align: center;
+}
+.p-sec-title--rev {
+  color: global.$c-base-dark;
+  text-shadow: 4px 4px 4px #EAEAEA;
 }
 .p-sec-title::before,
 .p-sec-title::after {
   content: "";
   position: absolute;
   top: 23%;
-  width: 80px;
+  width: clamp(50px, calc(80px / 375px * 100vw), 200px);
   height: 20px;
   background: url("../img/dec_section.webp") no-repeat center center;
   background-size: 80px 20px;
   @include global.mq(sm) {
     top: 20%;
     background-size: 200px 40px;
-    width: 200px;
+    width: clamp(50px, calc(200px / 1280px * 100vw), 200px);
     height: 40px;
   }
 }
@@ -36,11 +43,6 @@
   }
 }
 
-.p-sec-title__en,
-.p-sec-title__jp {
-  text-align: center;
-  text-shadow: 4px 4px 4px #3a4349;
-}
 .p-sec-title__en {
   font-family: Lora;
   font-size: 2rem;
@@ -51,14 +53,13 @@
     letter-spacing: 4.8px;
   }
 }
-
 .p-sec-title__jp {
   font-family: "Sawarabi Mincho";
   font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 1.2px;
-  margin-top: -4px;
-  @include global.mq(sm) {
+  margin-top: -3px;
+  @include global.mq(ss) {
     font-size: 1.25rem;
     letter-spacing: 2px;
     margin-left: 24px;

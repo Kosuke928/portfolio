@@ -124,6 +124,9 @@ Fv
   font-family: "Sawarabi Mincho";
   font-size: 1.25rem;
   letter-spacing: 2px;
+  @include global.mq(sp, max) {
+    left: calc(50% - 145px);
+  }
   @include global.mq(ss) {
     left: calc(50% - 90px - 10vw);
     font-size: 1.5rem;
