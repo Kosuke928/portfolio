@@ -1,0 +1,18 @@
+@use "../global" as global;
+
+.u-text-nowrap {
+  @include global.mq(sp) {
+    white-space: nowrap;
+  }
+}
+.u-appear-ss {
+  @include global.mq(sp, max) {
+    display: none;
+  }
+  @include global.mq(sp) {
+    display: block;
+  }
+  @include global.mq(ss) {
+    display: none;
+  }
+}

@@ -50,7 +50,7 @@ Works
   overflow: hidden;
   border-radius: 12px;
   padding-top: 32px;
-  padding-bottom: 26px;
+  padding-bottom: 24px;
   padding-inline: clamp(19px, calc(100vw * (19px / 375px)), 50px);
   border-radius: 10px;
   @include global.mq(ss) {
@@ -193,6 +193,7 @@ Works
 .swiper-button-next,
 .swiper-button-prev {
   top: auto;
+  z-index: global.$z-index-works_slide-parts;
 }
 .swiper-button-prev:after,
 .swiper-button-next:after {
@@ -220,6 +221,7 @@ Works
   width: 53%;
   left: auto;
   height: 4px;
+  z-index: global.$z-index-works_slide-parts;
   @include global.mq() {
     width: 54%;
     height: 8px;
