@@ -12,10 +12,34 @@ Tag
   letter-spacing: 1.4px;
   @include global.mq(sm) {
     font-size: clamp(12px, 12px / 768px * 100vw, 16px);
-    padding: calc((2px - 1px) / 1280px * 100vw) calc((16px - 1px) / 1280px * 100vw);
+    padding: calc((2px - 1px) / 1280px * 100vw)
+      calc((16px - 1px) / 1280px * 100vw);
     letter-spacing: 1.6px;
   }
   @include global.mq(md) {
     font-size: clamp(14px, 16px / 1280px * 100vw, 32px);
   }
+}
+
+/*---------- コンタクトフォームタグ ----------*/
+
+.c-tag-contact {
+  display: grid;
+  place-items: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: global.$c-secondary;
+  color: global.$c-emphasis;
+  font-size: 10px;
+  line-height: normal;
+  letter-spacing: 1.4px;
+  flex-shrink: 0;
+  @include global.mq(sm) {
+    padding: 5px 16px;
+    font-size: 14px;
+  }
+}
+.c-tag-contact--any {
+  color: global.$c-base-light;
+  background: global.$c-accent;
 }
