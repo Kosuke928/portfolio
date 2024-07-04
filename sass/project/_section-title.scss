@@ -23,6 +23,9 @@
   height: 20px;
   background: url("../img/dec_section.webp") no-repeat center center;
   background-size: 80px 20px;
+  @include global.mq(sp, max) {
+    background-size: 40px 15px;
+  }
   @include global.mq(sm) {
     top: 20%;
     background-size: 200px 40px;
@@ -32,12 +35,18 @@
 }
 .p-sec-title::before {
   left: calc(100% + 26px);
+  @include global.mq(sp, max) {
+    left: calc(100%);
+  }
   @include global.mq(sm) {
     left: calc(100% + 62px);
   }
 }
 .p-sec-title::after {
   right: calc(100% + 26px);
+  @include global.mq(sp, max) {
+    right: calc(100%);
+  }
   @include global.mq(sm) {
     right: calc(100% + 62px);
   }
@@ -45,7 +54,7 @@
 
 .p-sec-title__en {
   font-family: Lora;
-  font-size: 2rem;
+  font-size: clamp(20px, calc(32px / 375px * 100vw), 32px);
   font-weight: 700;
   letter-spacing: 3.2px;
   @include global.mq(sm) {

@@ -5,7 +5,7 @@ Contact
 ----------------------------------------------------------*/
 .p-contact {
   padding-top: 45px;
-  padding-bottom: 20px;
+  padding-bottom: 24px;
   background: linear-gradient(
     180deg,
     global.$c-main 0%,
@@ -183,7 +183,7 @@ Contact
     left: 10px;
   }
 }
-input[type=radio]:checked + span::after {
+input[type="radio"]:checked + span::after {
   opacity: 1;
 }
 
@@ -218,6 +218,26 @@ input[type=radio]:checked + span::after {
 }
 
 // チェックボックス
+.p-contact-form__field-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  @include global.mq(sm) {
+    gap: 10px;
+  }
+}
+.p-contact-form__field-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.4px;
+  @include global.mq(sm) {
+    font-size: 16px;
+    letter-spacing: 1.6px;
+  }
+}
+
 .wpcf7-checkbox {
 }
 .p-contact-form__checkbox {
@@ -231,10 +251,9 @@ input[type=radio]:checked + span::after {
     flex-wrap: wrap;
     column-gap: 38px;
     row-gap: 22px;
-    // gap: 38px;
   }
 }
-input[type=checkbox]:checked + span::after {
+input[type="checkbox"]:checked + span::after {
   opacity: 1;
 }
 
@@ -265,6 +284,12 @@ input[type=checkbox]:checked + span::after {
   margin-top: 30px;
   margin-inline: auto;
 }
+.p-contact-form__input:focus,
+.p-contact-form__textarea:focus {
+  border: 1px solid global.$c-base-light;
+  outline: 2px solid global.$c-secondary;
+}
+
 .wpcf7-submit {
 }
 .has-spinner {

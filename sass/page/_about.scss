@@ -2,9 +2,6 @@
 /*----------------------------------------------------------
 About
 ----------------------------------------------------------*/
-* {
-  // outline: 1px solid red;
-}
 .p-about {
   padding-top: 40px;
   padding-bottom: 62px;
@@ -41,46 +38,51 @@ About
 }
 
 .p-about__left {
-  @include global.mq(md) {
-  }
+  flex: 1;
+  position: relative;
+  margin: 0 auto;
 }
 .p-about__img {
-  position: relative;
   top: 0px;
-  left: -6px;
-  width: 300px;
-  width: clamp(250px, calc(300px / 375px * 100vw), 500px);
+  left: 0px;
+  width: clamp(200px, calc(300px / 375px * 100vw), 375px);
   height: auto;
-  margin: 0 auto;
-  @include global.mq(ss) {
-    width: clamp(313px, calc(500px / 1000px * 100vw), 500px);
-  }
-  @include global.mq(md) {
-    width: clamp(300px, calc(415px / 1280px * 100vw), 415px);
-    top: 18px;
-    left: 0px;
-  }
-}
-.p-about__img::after {
-  position: absolute;
-  top: 13px;
-  left: 13px;
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: global.$c-primary;
-  z-index: global.$z-index-about_img-shadow;
-  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.5s, opacity 0.5s;
   @include global.mq(sm) {
-    top: 18px;
-    left: 18px;
+    width: clamp(375px, calc(415px / 1280px * 100vw), 500px);
   }
 }
 .p-about__img img {
   width: 100%;
   height: 100%;
   border-radius: 4px;
+  transition: transform .3s;
+}
+.p-about__img img:hover {
+  transform: scale(1.03);
+}
+.p-about__img1 {
+  position: relative;
+  z-index: global.$z-index-about-img1;
+  opacity: 1;
+}
+.p-about__img2 {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: global.$z-index-about-img2;
+  opacity: 0.6;
+}
+.p-about__left.switch .p-about__img1 {
+  transform: translate(0, 20px);
+  z-index: 1;
+  opacity: 0.6;
+}
+.p-about__left.switch .p-about__img2 {
+  transform: translate(0, -10px);
+  z-index: 2;
+  opacity: 1;
 }
 
 .p-about__right {
@@ -143,7 +145,7 @@ About
   @include global.mq(md) {
     max-width: 100%;
     padding-top: 10px;
-    padding-left: clamp(14px,calc(22px / 1280px * 100vw), 22px);
+    padding-left: clamp(14px, calc(22px / 1280px * 100vw), 22px);
     font-size: 20px;
     letter-spacing: 2px;
   }
@@ -170,7 +172,7 @@ About
     flex-wrap: nowrap;
     justify-content: start;
     margin-top: 24px;
-    padding-left: clamp(14px,calc(22px / 1280px * 100vw), 22px);
+    padding-left: clamp(14px, calc(22px / 1280px * 100vw), 22px);
     column-gap: clamp(20px, calc(35px / 1200px * 100vw), 35px);
   }
   @include global.mq(lg) {
