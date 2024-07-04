@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head prefix="og: https://ogp.me/ns#">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 最後に必ず確認のこと -->
+    <meta name="robots" content="noindex" />
+
+    <!-- サイトタイトル,サイト詳細 -->
+    <title>Kosuke's Portfolio</title>
+    <meta name="description" content="" />
+
+    <!-- OGP設定 -->
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kosuke-blog.com/" />
+    <meta property="og:image" content="https://kosuke-blog.com/img/ogp.webp" />
+
+    <!-- GoogleFont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Sans+JP:wght@100..900&family=Sawarabi+Mincho&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ファビコン,Swiper,リセットCSS,CSSリンク -->
+    <link rel="icon" href="./favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header id="header" class="l-header">
+      <div class="p-header__inner">
+        <h1 class="p-header__logo">
+          <a href="#" class="p-header__logo-link">
+            <img
+              src="./img/header_logo.svg"
+              alt="Kosuke's Portfolio"
+              width="90"
+              height="60"
+            />
+          </a>
+        </h1>
+        <div id="js-drawer-open" class="p-header__button">
+          <button class="c-hamburger" aria-label="Menu">
+            <span class="c-hamburger__parts"></span>
+            <span class="c-hamburger__parts"></span>
+            <span class="c-hamburger__parts"></span>
+          </button>
+        </div>
+        <nav class="p-header__nav p-gnav">
+          <ul class="p-gnav__list">
+            <li class="p-gnav__item">
+              <a href="#works" class="p-gnav__link">Works</a>
+            </li>
+            <li class="p-gnav__item">
+              <a href="#about" class="p-gnav__link">About</a>
+            </li>
+            <li class="p-gnav__item">
+              <a href="#contact" class="p-gnav__link">Contact</a>
+            </li>
+            <li class="p-gnav__item p-btn-x">
+              <a href="#" class="p-gnav__link c-btn-x__link">
+                <svg
+                  width="30"
+                  height="30"
+                  viewBox="0 0 20 19"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.9027 8.04517L19.3482 0H17.5838L11.119 6.98554L5.9555 0H0L7.8082 10.5633L0 19H1.7644L8.5915 11.6231L14.0445 19H20L11.9027 8.04517ZM9.4861 10.6564L8.695 9.60459L2.4002 1.23471H5.1103L10.1902 7.98941L10.9813 9.04134L17.5847 17.8214H14.8746L9.4861 10.6564Z"
+                    fill="none"
+                    class="c-btn__icon-path--x"
+                  />
+                </svg>
+                @positiv_ksk
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div id="drawer" class="p-drawer" style="display: none">
+          <div class="p-drawer__inner">
+            <div class="p-drawer__logo">
+              <a href="#" class="p-drawer__logo-link">
+                <img
+                  src="./img/header_logo.svg"
+                  alt="Kosuke's Portfolio"
+                  width="90"
+                  height="60"
+                />
+              </a>
+            </div>
+            <nav class="p-drawer__nav p-dnav">
+              <ul class="p-dnav__list">
+                <li class="p-dnav__item">
+                  <a href="#works" class="p-dnav__link">-Works</a>
+                </li>
+                <li class="p-dnav__item">
+                  <a href="#about" class="p-dnav__link">-About</a>
+                </li>
+                <li class="p-dnav__item">
+                  <a href="#contact" class="p-dnav__link">-Contact</a>
+                </li>
+                <li class="p-dnav__item p-dnav__x p-btn-x">
+                  <a href="#" class="p-dnav__link c-btn-x__link">
+                    <svg
+                      width="20"
+                      height="19"
+                      viewBox="0 0 20 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.9027 8.04517L19.3482 0H17.5838L11.119 6.98554L5.9555 0H0L7.8082 10.5633L0 19H1.7644L8.5915 11.6231L14.0445 19H20L11.9027 8.04517ZM9.4861 10.6564L8.695 9.60459L2.4002 1.23471H5.1103L10.1902 7.98941L10.9813 9.04134L17.5847 17.8214H14.8746L9.4861 10.6564Z"
+                        fill="none"
+                        class="c-btn__icon-path--x"
+                      />
+                    </svg>
+                    @positiv_ksk
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="l-main">
+    </main>
+
+    <footer class="l-footer" id="footer">
+      <p class="l-footer__text">
+        <small class="copyright">©2024 Kosuke’s Blog</small>
+      </p>
+    </footer>
+
+    <div id="js-to-top" class="p-to-top">
+      <svg
+        width="26"
+        height="20"
+        viewBox="0 0 26 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22.0156 19.113L12.9879 7.32779L3.96015 19.113C3.74474 19.3942 3.489 19.6173 3.20755 19.7695C2.9261 19.9217 2.62444 20 2.3198 20C2.01516 20 1.7135 19.9217 1.43205 19.7695C1.1506 19.6173 0.894868 19.3942 0.679455 19.113C0.464041 18.8318 0.293166 18.498 0.176585 18.1305C0.0600039 17.7631 -2.26974e-09 17.3693 0 16.9716C2.26976e-09 16.5739 0.0600039 16.1801 0.176585 15.8127C0.293166 15.4453 0.464041 15.1114 0.679455 14.8302L11.3592 0.888448C12.2666 -0.296148 13.7324 -0.296148 14.6399 0.888448L25.3196 14.8302C25.5353 15.1112 25.7064 15.445 25.8231 15.8125C25.9399 16.1799 26 16.5738 26 16.9716C26 17.3694 25.9399 17.7633 25.8231 18.1308C25.7064 18.4982 25.5353 18.832 25.3196 19.113C24.4121 20.2672 22.923 20.2976 22.0156 19.113Z"
+          fill="#F8D5B8"
+        />
+      </svg>
+    </div>
+
+    <!-- Swiper,JavaScript,JQueryリンク -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

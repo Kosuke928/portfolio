@@ -1,11 +1,8 @@
 @use "../global" as global;
 
 /*----------------------------------------------------------
-btn_x
+Header & Drawer_btn-x
 ----------------------------------------------------------*/
-.p-btn-x {
-  padding-left: 10px;
-}
 .c-btn-x__link {
   display: flex;
   align-items: center;
@@ -27,31 +24,121 @@ btn_x
   width: 15px;
   height: 15px;
 }
-
-/*----------------------------------------------------------
-btn_swiper
-----------------------------------------------------------*/
-.c-btn__icon-path--pagination {
-  fill: global.$c-primary;
-}
 .c-btn__icon-path--x {
   fill: global.$c-base-light;
 }
 
 /*----------------------------------------------------------
-btn_contact
+Swiper_btn
+----------------------------------------------------------*/
+.c-btn__icon-path--pagination {
+  fill: global.$c-primary;
+  transition: fill 0.3s;
+}
+.p-slide__arrow-prev,
+.p-slide__arrow-next {
+  border: 1px solid global.$c-main;
+  transition: background-color 0.3s, border 0.3s, box-shadow 0.3s,
+    transform 0.1s;
+  background-color: global.$c-main;
+  opacity: 1;
+}
+.p-slide__arrow-prev:hover,
+.p-slide__arrow-next:hover {
+  background-color: global.$c-primary;
+  border-color: global.$c-main;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  & .c-btn__icon-path--pagination {
+    fill: global.$c-main;
+  }
+}
+.p-slide__arrow-prev:active,
+.p-slide__arrow-next:active {
+  transform: translateY(2px);
+  transition-duration: 0s;
+  box-shadow: none;
+}
+
+/*----------------------------------------------------------
+Contact_btn
 ----------------------------------------------------------*/
 .c-button-submit {
+  color: global.$c-base-dark;
   text-align: center;
-  padding: calc(7px - 1px) calc(48px - 1px);
+  padding: calc(7px - 1px) calc(50px - 1px);
   border-radius: 50px;
   border: 1px solid #52616a;
-  background: #fff;
   font-size: 16px;
   line-height: normal;
   letter-spacing: 2px;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+  background-color: global.$c-base-light;
+  opacity: 1;
   @include global.mq(sm) {
     font-size: 20px;
     padding: calc(20px - 1px) calc(120px - 1px);
   }
+}
+.c-button-submit:hover {
+  opacity: 0.8;
+  background-color: global.$c-secondary;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
+}
+.c-button-submit:active {
+  opacity: 0.8;
+  transform: translateY(2px);
+  transition-duration: 0s;
+  box-shadow: none;
+}
+
+/*----------------------------------------------------------
+To-top_btn
+----------------------------------------------------------*/
+.c-to-top {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  display: grid;
+  place-items: center;
+  z-index: global.$z-index-to-top;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s,
+    outline 0.3s;
+  outline: 1px solid global.$c-primary;
+  background-color: global.$c-main;
+  opacity: 1;
+  @include global.mq(sm) {
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+  }
+}
+.c-to-top:hover {
+  background-color: global.$c-primary;
+  outline: 1px solid global.$c-main;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  & .c-btn__icon-path--top {
+    fill: global.$c-main;
+  }
+}
+.c-to-top:active {
+  transform: translateY(2px);
+  transition-duration: 0s;
+  box-shadow: none;
+}
+.c-to-top svg {
+  width: 18px;
+  height: 18px;
+  @include global.mq(sm) {
+    width: 24px;
+    height: 24px;
+  }
+}
+.c-btn__icon-path--top {
+  fill: global.$c-secondary;
+  transition: fill 0.3s;
 }
