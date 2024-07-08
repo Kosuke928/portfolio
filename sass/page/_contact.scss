@@ -61,7 +61,7 @@ Contact
     margin-top: 78px;
   }
 }
-.p-contact-fom__fields {
+.p-contact-form__fields {
   padding-block: 50px;
   padding-inline: 16px;
   display: flex;
@@ -77,6 +77,7 @@ Contact
   }
 }
 .p-contact-form__field {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -87,8 +88,8 @@ Contact
     gap: 60px;
   }
 }
-.p-contact-form__field:nth-of-type(2),
-.p-contact-form__field:nth-of-type(6) {
+.p-contact-form__fields .p-contact-form__field:nth-of-type(2),
+.p-contact-form__fields .p-contact-form__field:nth-of-type(6) {
   margin-top: 3px;
 }
 .p-contact-form__field-head {
@@ -283,6 +284,10 @@ input[type="checkbox"]:checked + span::after {
 .p-contact-form__button {
   margin-top: 30px;
   margin-inline: auto;
+  // width: fit-content;
+  display: grid;
+  place-items: center;
+  width: fit-content;
 }
 .p-contact-form__input:focus,
 .p-contact-form__textarea:focus {
@@ -294,5 +299,99 @@ input[type="checkbox"]:checked + span::after {
 }
 .has-spinner {
 }
+
+.wpcf7-form {
+  position: relative;
+}
+// 送信ボタン下に出る送信完了メッセージ
+.wpcf7 form.sent .wpcf7-response-output {
+  border-color: #8cebe5;
+}
+// 送信ボタン下に出る未入力警告
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output {
+  border: none;
+  position: absolute;
+  bottom: 16px;
+  left: 0px;
+  right: 0px;
+  margin-inline: auto;
+  width: fit-content;
+  font-size: clamp(12px, calc(14px / 768px * 100vw), 14px);
+  color: global.$c-error;
+  text-decoration: underline;
+  @include global.mq(sm) {
+    bottom: 14px;
+    font-size: clamp(18px, calc(20px / 1280px * 100vw), 20px);
+  }
+}
+//必須項目が未入力の場合の項目下の文章
+.wpcf7-not-valid-tip {
+  margin-top: 10px;
+  font-size: clamp(12px, calc(20px / 1280px * 100vw), 20px);
+  color: global.$c-error;
+  @include global.mq(sm) {
+    font-size: clamp(16px, calc(20px / 1280px * 100vw), 20px);
+  }
+}
+//送信完了、エラー時のメッセージ非表示
+.wpcf7 form.sent .wpcf7-response-output,
+.wpcf7 form.failed .wpcf7-response-output {
+  display: none !important;
+}
+.wpcf7-list-item {
+  margin: 0;
+}
+.wpcf7-list-item-label {
+  cursor: pointer;
+}
+
+/*確認画面と完了画面を非表示*/
+.p-confirm {
+  padding-block: 50px;
+  padding-inline: 30px;
+  display: flex;
+  flex-direction: column;
+  @include global.mq(sm) {
+    padding-inline: 50px;
+    padding-top: 80px;
+    padding-bottom: 65px;
+    max-width: calc(1043px + 30px * 2);
+    margin-inline: auto;
+  }
+}
+
+/*デフォルトのサンクスメッセージを非表示*/
 .wpcf7-response-output {
+  display: none;
+}
+
+.p-confirm__field {
+  padding-block: 30px;
+  // border-top: 1px solid global.$c-primary;
+  border-bottom: 1px solid global.$c-primary;
+}
+.p-confirm__field:first-of-type {
+  margin-top: 40px;
+  border-top: 1px solid global.$c-primary;
+  border-bottom: 1px solid global.$c-primary;
+}
+.p-confirm__text {
+  font-size: 16px;
+  @include global.mq(sm) {
+    font-size: 20px;
+  }
+}
+.p-confirm__title {
+  text-align: center;
+  font-size: 18px;
+  @include global.mq(sm) {
+    font-size: 24px;
+  }
+}
+
+.p-confirm__button{
+  margin-right: 0;
+  margin-left: auto;
+  margin-top: 6px;
 }

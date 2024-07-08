@@ -131,6 +131,10 @@ textarea {
   appearance: none;
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 /*----------------------------------------------------------
 Header
 ----------------------------------------------------------*/
@@ -145,6 +149,11 @@ Header
   .l-header {
     height: 70px;
   }
+}
+
+.l-header.js-show {
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .p-header__inner {
@@ -167,7 +176,6 @@ Header
   position: absolute;
   top: 3px;
   left: 15px;
-  display: none;
 }
 @media screen and (min-width: 768px) {
   .p-header__logo {
@@ -420,7 +428,8 @@ Swiper_btn
 /*----------------------------------------------------------
 Contact_btn
 ----------------------------------------------------------*/
-.c-button-submit {
+.c-button-contact,
+.c-button-top {
   color: #000000;
   text-align: center;
   padding: 6px 49px;
@@ -438,20 +447,23 @@ Contact_btn
   opacity: 1;
 }
 @media screen and (min-width: 768px) {
-  .c-button-submit {
+  .c-button-contact,
+  .c-button-top {
     font-size: 20px;
     padding: 19px 119px;
   }
 }
 
-.c-button-submit:hover {
+.c-button-contact:hover,
+.c-button-top:hover {
   opacity: 0.8;
   background-color: #F8D5B8;
   -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
           box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
 }
 
-.c-button-submit:active {
+.c-button-contact:active,
+.c-button-top:active {
   opacity: 0.8;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
@@ -459,6 +471,25 @@ Contact_btn
           transition-duration: 0s;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.c-button-contact--confirm.js-disabled {
+  pointer-events: none;
+  color: #FEFFFA;
+  background-color: #7F8C94;
+  opacity: 0.4;
+}
+
+.c-button-contact--back {
+  padding: 4px 13px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+@media screen and (min-width: 768px) {
+  .c-button-contact--back {
+    padding: 5px 17px;
+    font-size: 16px;
+  }
 }
 
 /*----------------------------------------------------------
@@ -746,22 +777,22 @@ Fv
     opacity: 1;
   }
 }
-.p-fv__logo svg {
+.p-fv__logo img {
   width: clamp(0px, 47.4666666667vw, 200px);
   height: auto;
 }
 @media screen and (min-width: 512px) {
-  .p-fv__logo svg {
+  .p-fv__logo img {
     width: clamp(0px, 39.0625vw, 250px);
   }
 }
 @media screen and (min-width: 768px) {
-  .p-fv__logo svg {
+  .p-fv__logo img {
     width: clamp(0px, 32.5520833333vw, 300px);
   }
 }
 @media screen and (min-width: 1000px) {
-  .p-fv__logo svg {
+  .p-fv__logo img {
     width: clamp(0px, 30vw, 347px);
   }
 }
@@ -810,10 +841,6 @@ Fv
     -webkit-clip-path: polygon(0% 0%, 70% 0%, 43% 100%, 0% 100%, 0 0);
             clip-path: polygon(0% 0%, 70% 0%, 43% 100%, 0% 100%, 0 0);
   }
-}
-
-.c-fv-logo {
-  stroke: #000000;
 }
 
 .p-fv__bg-img {
@@ -985,8 +1012,6 @@ Fv
 }
 @media screen and (min-width: 1280px) {
   .p-scrolldown__text {
-    top: -20px;
-    left: -20px;
     color: #000000;
   }
 }
@@ -1638,6 +1663,61 @@ About
   letter-spacing: 1.6px;
 }
 
+.p-about__skill svg {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.p-about__skill.animate svg {
+  -webkit-animation: flip 3s linear forwards;
+          animation: flip 3s linear forwards;
+}
+
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  10% {
+    -webkit-transform: rotateY(720deg);
+            transform: rotateY(720deg); /* 高速回転 */
+  }
+  33.33% {
+    -webkit-transform: rotateY(1800deg);
+            transform: rotateY(1800deg); /* 通常速度 */
+  }
+  66.66% {
+    -webkit-transform: rotateY(2520deg);
+            transform: rotateY(2520deg); /* 通常速度 */
+  }
+  100% {
+    -webkit-transform: rotateY(2880deg);
+            transform: rotateY(2880deg); /* ゆっくり */
+  }
+}
+
+@keyframes flip {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  10% {
+    -webkit-transform: rotateY(720deg);
+            transform: rotateY(720deg); /* 高速回転 */
+  }
+  33.33% {
+    -webkit-transform: rotateY(1800deg);
+            transform: rotateY(1800deg); /* 通常速度 */
+  }
+  66.66% {
+    -webkit-transform: rotateY(2520deg);
+            transform: rotateY(2520deg); /* 通常速度 */
+  }
+  100% {
+    -webkit-transform: rotateY(2880deg);
+            transform: rotateY(2880deg); /* ゆっくり */
+  }
+}
 /*----------------------------------------------------------
 Contact
 ----------------------------------------------------------*/
@@ -1708,7 +1788,7 @@ Contact
   }
 }
 
-.p-contact-fom__fields {
+.p-contact-form__fields {
   padding-block: 50px;
   padding-inline: 16px;
   display: -webkit-box;
@@ -1721,7 +1801,7 @@ Contact
   gap: 30px;
 }
 @media screen and (min-width: 768px) {
-  .p-contact-fom__fields {
+  .p-contact-form__fields {
     padding-inline: 30px;
     padding-top: 80px;
     padding-bottom: 65px;
@@ -1732,6 +1812,7 @@ Contact
 }
 
 .p-contact-form__field {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1757,8 +1838,8 @@ Contact
   }
 }
 
-.p-contact-form__field:nth-of-type(2),
-.p-contact-form__field:nth-of-type(6) {
+.p-contact-form__fields .p-contact-form__field:nth-of-type(2),
+.p-contact-form__fields .p-contact-form__field:nth-of-type(6) {
   margin-top: 3px;
 }
 
@@ -2009,12 +2090,229 @@ input[type=checkbox]:checked + span::after {
 .p-contact-form__button {
   margin-top: 30px;
   margin-inline: auto;
+  display: grid;
+  place-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .p-contact-form__input:focus,
 .p-contact-form__textarea:focus {
   border: 1px solid #FFFFFF;
   outline: 2px solid #F8D5B8;
+}
+
+.wpcf7-form {
+  position: relative;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+  border-color: #8cebe5;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output {
+  border: none;
+  position: absolute;
+  bottom: 16px;
+  left: 0px;
+  right: 0px;
+  margin-inline: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: clamp(12px, 1.8229166667vw, 14px);
+  color: #ff8888;
+  text-decoration: underline;
+}
+@media screen and (min-width: 768px) {
+  .wpcf7 form.invalid .wpcf7-response-output,
+  .wpcf7 form.unaccepted .wpcf7-response-output {
+    bottom: 14px;
+    font-size: clamp(18px, 1.5625vw, 20px);
+  }
+}
+
+.wpcf7-not-valid-tip {
+  margin-top: 10px;
+  font-size: clamp(12px, 1.5625vw, 20px);
+  color: #ff8888;
+}
+@media screen and (min-width: 768px) {
+  .wpcf7-not-valid-tip {
+    font-size: clamp(16px, 1.5625vw, 20px);
+  }
+}
+
+.wpcf7 form.sent .wpcf7-response-output,
+.wpcf7 form.failed .wpcf7-response-output {
+  display: none !important;
+}
+
+.wpcf7-list-item {
+  margin: 0;
+}
+
+.wpcf7-list-item-label {
+  cursor: pointer;
+}
+
+/*確認画面と完了画面を非表示*/
+.p-confirm {
+  padding-block: 50px;
+  padding-inline: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .p-confirm {
+    padding-inline: 50px;
+    padding-top: 80px;
+    padding-bottom: 65px;
+    max-width: 1103px;
+    margin-inline: auto;
+  }
+}
+
+/*デフォルトのサンクスメッセージを非表示*/
+.wpcf7-response-output {
+  display: none;
+}
+
+.p-confirm__field {
+  padding-block: 30px;
+  border-bottom: 1px solid #52616A;
+}
+
+.p-confirm__field:first-of-type {
+  margin-top: 40px;
+  border-top: 1px solid #52616A;
+  border-bottom: 1px solid #52616A;
+}
+
+.p-confirm__text {
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  .p-confirm__text {
+    font-size: 20px;
+  }
+}
+
+.p-confirm__title {
+  text-align: center;
+  font-size: 18px;
+}
+@media screen and (min-width: 768px) {
+  .p-confirm__title {
+    font-size: 24px;
+  }
+}
+
+.p-confirm__button {
+  margin-right: 0;
+  margin-left: auto;
+  margin-top: 6px;
+}
+
+/*----------------------------------------------------------
+Thanks
+----------------------------------------------------------*/
+.p-thanks {
+  padding-top: 80px;
+  padding-bottom: 62px;
+  height: calc(100vh - 63px);
+  background-color: #FEFFFA;
+}
+@media screen and (min-width: 768px) {
+  .p-thanks {
+    padding-top: 100px;
+  }
+}
+
+.p-thanks__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+.p-thanks__contents {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.p-thanks__text {
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  .p-thanks__text {
+    font-size: 20px;
+  }
+}
+
+.p-thanks__button {
+  margin-top: 60px;
+  margin-inline: auto;
+}
+
+/*----------------------------------------------------------
+Error
+----------------------------------------------------------*/
+.p-error {
+  padding-top: 80px;
+  padding-bottom: 62px;
+  height: calc(100vh - 63px);
+  background-color: #FEFFFA;
+}
+@media screen and (min-width: 768px) {
+  .p-error {
+    padding-top: 100px;
+  }
+}
+
+.p-error__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+.p-error__contents {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.p-error__text {
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  .p-error__text {
+    font-size: 20px;
+  }
+}
+
+.p-error__button {
+  margin-top: 60px;
+  margin-inline: auto;
 }
 
 .p-sec-title {

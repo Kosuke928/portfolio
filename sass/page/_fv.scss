@@ -50,7 +50,7 @@ Fv
     opacity: 1;
   }
 }
-.p-fv__logo svg {
+.p-fv__logo img {
   width: clamp(0px, calc(100vw * 178 / 375), 200px);
   height: auto;
   @include global.mq(ss) {
@@ -91,9 +91,6 @@ Fv
   @include global.mq(pc) {
     clip-path: polygon(0% 0%, 70% 0%, 43% 100%, 0% 100%, 0 0);
   }
-}
-.c-fv-logo {
-  stroke: global.$c-base-dark;
 }
 .p-fv__bg-img {
   text-align: right;
@@ -183,7 +180,7 @@ Fv
   background: global.$c-base-light;
   animation: pathmove 1.6s ease-in-out infinite;
   opacity: 0;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
   @include global.mq(pc) {
     background: global.$c-base-dark;
   }
@@ -212,10 +209,8 @@ Fv
   font-size: 0.75rem;
   color: global.$c-base-light;
   letter-spacing: 0.05em;
-  transition: color .3s;
+  transition: color 0.3s;
   @include global.mq(pc) {
-    top: -20px;
-    left: -20px;
     color: global.$c-base-dark;
   }
 }
