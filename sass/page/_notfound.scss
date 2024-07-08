@@ -1,0 +1,42 @@
+@use "../global" as global;
+
+/*----------------------------------------------------------
+Error
+----------------------------------------------------------*/
+.p-error {
+  padding-top: 80px;
+  padding-bottom: 62px;
+  height: calc(100vh - 63px);
+  background-color: global.$c-main;
+  @include global.mq(sm) {
+    padding-top: 100px;
+  }
+}
+
+.p-error__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+.p-error__container {
+}
+
+.p-error__title {
+}
+
+.p-error__contents {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.p-error__text {
+  font-size: 16px;
+  @include global.mq(sm) {
+    font-size: 20px;
+  }
+}
+.p-error__button {
+  margin-top: 60px;
+  margin-inline: auto;
+}

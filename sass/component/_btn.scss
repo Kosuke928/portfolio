@@ -62,7 +62,8 @@ Swiper_btn
 /*----------------------------------------------------------
 Contact_btn
 ----------------------------------------------------------*/
-.c-button-submit {
+.c-button-contact,
+.c-button-top {
   color: global.$c-base-dark;
   text-align: center;
   padding: calc(7px - 1px) calc(50px - 1px);
@@ -80,16 +81,34 @@ Contact_btn
     padding: calc(20px - 1px) calc(120px - 1px);
   }
 }
-.c-button-submit:hover {
+.c-button-contact:hover,
+.c-button-top:hover {
   opacity: 0.8;
   background-color: global.$c-secondary;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
 }
-.c-button-submit:active {
+.c-button-contact:active,
+.c-button-top:active {
   opacity: 0.8;
   transform: translateY(2px);
   transition-duration: 0s;
   box-shadow: none;
+}
+
+.c-button-contact--confirm.js-disabled {
+  pointer-events: none;
+  color: global.$c-main;
+  background-color: global.$c-accent;
+  opacity: 0.4;
+}
+.c-button-contact--back {
+  padding: calc(5px - 1px) calc(14px - 1px);
+  font-size: 14px;
+  border-radius: 5px;
+  @include global.mq(sm) {
+    padding: calc(6px - 1px) calc(18px - 1px);
+    font-size: 16px;
+  }
 }
 
 /*----------------------------------------------------------
